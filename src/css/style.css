@@ -1,0 +1,177 @@
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background: url('/src/images/bg-desktop.svg') center center no-repeat;
+    background-size: cover;
+    background-color: #952994;
+
+    display: grid;
+    grid-template-areas: 
+    "header header header header"
+    "display display display display"
+    "footer footer footer footer";
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/*-------------------------*/
+
+/*-------------------header*/
+
+.header {
+    grid-area: header;
+    height: 100px;
+}
+
+.header img {
+    padding: 30px;
+    font-weight: 600;
+    font-size: 50px;
+    letter-spacing: 2.5px;
+    color: #001848;
+}
+
+/*-------------------display*/
+
+.display {
+    grid-area: display;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    
+}
+
+.display img {
+    padding: 30px;
+}
+
+.display .info {   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 25px;
+    width: 550px;
+    height: 400px;
+    margin-left: 10%;
+    margin-right: 10%;
+    word-wrap: break-word;
+}
+
+.display .info h2 {
+    font-size: 3.5rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.display .info p {
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-align: justify;
+    color: #fff;
+}
+
+.display .btn-register {
+    background-color: #fff;
+    width: 200px;
+    height: 60px;
+    max-height: 200px;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+.display .btn-register a {
+    font-size: 20px;
+    font-weight: 500;
+    color: #952994;
+}
+
+
+.display .btn-register:hover {
+    opacity: 0.6;
+}
+
+
+/*-------------------footer*/
+
+.footer {
+    grid-area: footer;
+}
+
+.footer .social {
+    display: flex;
+    flex-direction: row-reverse;
+
+    font-size: 3.5rem;
+}
+
+.footer .social a {
+    margin: 10px;
+    color: #001848;
+    transition: 0.5s;
+}
+
+.footer .social a:hover {
+    color: #fff;
+}
+
+
+
+/* ----------------RESPONSIVO-------------------- */
+
+@media (max-width: 1000px) {
+
+    body {
+        background: url('/src/images/bg-mobile.svg') center center no-repeat;
+        background-size: cover;
+        background-color: #952994;
+    }
+
+    .display {
+        display: flex;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+    }
+
+    .image-principal {
+        width: 100%;
+        text-align: center;
+    }
+
+    .social {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+
+    body {
+        background: url('/src/images/bg-mobile.svg') center center no-repeat;
+        background-size: cover;
+        background-color: #952994;
+    }
+
+    .header img {
+        display: flex;
+        justify-content: center;
+    }
+
+    .display {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+    }
+
+    .image-principal {
+        display: none;
+    }
+
+    .social {
+        display: flex;
+        justify-content: center;
+    }
+}
